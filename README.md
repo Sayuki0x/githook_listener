@@ -1,16 +1,14 @@
-# typescript-boilerplate
+# githook_listener
 
-A quick start repo for typescript projects.
+A utility to listen for github webhooks and do file / git operations on a repository.
 
-Contains these tools:
+## prereqs
 
-1. Prettier for code formatting
-2. TSLint for linting
-3. Husky & lint-staged for pre-commit hooks (currently foirmats and then lints the code pre-commit)
+1. You must get a github secret from github in the repo settings. Set that in the secret variable in index.ts
+2. Set the repo path in the repo variable in index.ts
+3. By default, it will just execute a git stash and then a git pull on every push event. You can edit the commands it runs in the exec function.
 
-All of your typescript files should go in the `./src` directory, and the compiled javscript will be available at `./dist`.
-
-## Setup
+## dev setup
 
 1. Install the dependencies
 
@@ -23,6 +21,5 @@ All of your typescript files should go in the `./src` directory, and the compile
 3. Start the project
 
 `yarn start`
-
 
 You can now lint your project with `yarn lint` or `yarn lint-fix`
